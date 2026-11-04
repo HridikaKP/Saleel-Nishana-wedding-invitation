@@ -625,127 +625,182 @@ button {
 
 /* =========================================
    MOBILE RESPONSIVENESS
+   Strategy: Lock every section to 100svh.
+   The agate plate gold borders appear at:
+     top  ≈ 21svh from viewport top
+     bottom ≈ 84svh from viewport top
+   Content starts at 21svh and is capped to
+   63svh max-height → always inside the plate.
+   If content is taller, it scrolls silently.
 ========================================= */
 
 @media (max-width: 480px) {
+  /* ── Section: exactly one screen, clipped ── */
   .page-section {
-    /* Let section grow with content; still at least full screen */
+    height: 100svh;
     min-height: 100svh;
-    height: auto;
-    /* Plate inner area: top border ~22%, bottom ~86%
-       So pad 22% top + 14% bottom to keep text inside */
-    padding: 22svh 0 14svh;
+    overflow: hidden;
+    /* Top-align children so padding-top pushes
+       content below the plate's gold top border */
+    align-items: flex-start;
+    justify-content: center;
+    /* 21svh clears the top gold border */
+    padding-top: 21svh;
+    padding-bottom: 0;
   }
 
-  /* For content-heavy pages, allow more room */
-  .couple-page,
-  .date-page {
-    padding: 18svh 0 10svh;
+  /* Cover page: keep content centered inside plate */
+  .opening-page {
+    align-items: center;
+    padding-top: 19svh;
   }
 
+  /* ── Content box: fits within the plate ── */
   .section-content,
   .opening-content {
-    /* 56% width keeps content inside the oval plate's side borders */
-    width: 56%;
+    /* Width: plate side borders are off-screen on mobile,
+       so 72% gives plenty of breathing room */
+    width: 72%;
     max-width: 100%;
-    padding: 8px 0;
+    margin: 0 auto;
+    padding: 0;
+    /* Height: plate bottom (84svh) - plate top (21svh) = 63svh */
+    max-height: 63svh;
+    /* Scroll silently if content overflows the plate */
+    overflow-y: auto;
+    scrollbar-width: none;       /* Firefox */
+    -ms-overflow-style: none;    /* IE/Edge */
   }
 
+  .section-content::-webkit-scrollbar,
+  .opening-content::-webkit-scrollbar {
+    display: none;               /* Chrome/Safari */
+  }
+
+  /* ── Opening page monogram ── */
   .monogram {
-    width: min(54vw, 230px);
-    margin-bottom: 20px;
+    width: min(52vw, 210px);
+    margin-bottom: 18px;
   }
 
   .open-button {
-    min-width: 165px;
-    min-height: 48px;
+    min-width: 160px;
+    min-height: 46px;
     font-size: 8px;
     padding: 0 18px;
   }
 
+  /* ── Typography (scaled to fit inside plate) ── */
   .small-label {
     font-size: 9px;
     letter-spacing: 1.5px;
+    margin-bottom: 10px;
   }
 
   .script-heading {
-    font-size: 36px;
+    font-size: 34px;
+    margin-bottom: 0;
+  }
+
+  .arabic-text {
+    font-size: 18px;
+    margin-bottom: 10px;
   }
 
   .invitation-message {
-    font-size: 15px;
-    line-height: 1.6;
-    margin: 14px auto;
+    font-size: 14px;
+    line-height: 1.55;
+    margin: 10px auto;
   }
 
   .invitation-couple {
-    margin: 16px auto;
+    margin: 12px auto;
   }
 
   .invitation-couple h2 {
-    font-size: 28px;
+    font-size: 26px;
+    margin: 6px 0;
   }
 
   .invitation-couple span {
-    font-size: 28px;
-  }
-
-  .person-name {
     font-size: 26px;
   }
 
+  /* ── Families page ── */
+  .person-name {
+    font-size: 24px;
+  }
+
   .parent-details {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .family-details {
-    gap: 12px;
-    margin-top: 18px;
+    gap: 10px;
+    margin-top: 14px;
   }
 
   .and-symbol {
-    font-size: 32px;
+    font-size: 28px;
   }
 
+  .family-role {
+    margin-bottom: 8px;
+  }
+
+  .family-line {
+    margin: 10px auto;
+  }
+
+  /* ── Date page ── */
   .date-card {
     width: 100%;
-    margin: 14px auto;
-    padding: 14px 4px;
+    margin: 10px auto;
+    padding: 10px 4px;
+  }
+
+  .weekday {
+    margin-bottom: 8px;
   }
 
   .date-number {
-    font-size: 72px;
+    font-size: 66px;
   }
 
   .date-side-line {
-    width: 16px;
+    width: 14px;
   }
 
   .month-year {
-    font-size: 13px;
+    font-size: 12px;
     letter-spacing: 3px;
+    margin: 8px 0 4px;
   }
 
   .year-label {
-    font-size: 9px;
+    font-size: 8px;
   }
 
   .time-display {
-    margin-top: 16px;
+    margin-top: 12px;
+  }
+
+  .time-label {
+    margin-bottom: 6px;
   }
 
   .wedding-time {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .countdown-area {
-    margin-top: 16px;
-    padding: 14px 0;
+    margin-top: 12px;
+    padding: 10px 0;
   }
 
   .countdown-heading {
-    font-size: 9px;
-    margin-bottom: 14px;
+    font-size: 8px;
+    margin-bottom: 10px;
   }
 
   .countdown {
@@ -753,9 +808,9 @@ button {
   }
 
   .countdown-item {
-    min-width: 48px;
-    min-height: 56px;
-    padding: 5px 4px;
+    min-width: 46px;
+    min-height: 52px;
+    padding: 4px;
   }
 
   .countdown-number {
