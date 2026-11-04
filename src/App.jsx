@@ -77,6 +77,22 @@ function Ornament() {
   );
 }
 
+/* SCROLL HINT */
+
+function ScrollHint() {
+  return (
+    <div className="scroll-hint" aria-hidden="true">
+      <span className="scroll-hint-label">scroll</span>
+      <div className="scroll-hint-arrow">
+        <svg width="18" height="24" viewBox="0 0 18 24" fill="none">
+          <path d="M9 0 L9 18" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
+          <path d="M3 13 L9 20 L15 13" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  );
+}
+
 /* MAIN APP */
 
 function App() {
@@ -223,6 +239,8 @@ function App() {
 
           </div>
 
+          <ScrollHint />
+
         </section>
 
       ) : (
@@ -354,6 +372,8 @@ function App() {
 
             </div>
 
+          <ScrollHint />
+
           </section>
 
 
@@ -431,6 +451,8 @@ function App() {
 
             </div>
 
+          <ScrollHint />
+
           </section>
 
 
@@ -502,6 +524,8 @@ function App() {
               </p>
 
             </div>
+
+          <ScrollHint />
 
           </section>
 
