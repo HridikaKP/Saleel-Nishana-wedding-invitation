@@ -290,13 +290,13 @@ function App() {
 
             <div className="section-content">
 
-              <p className="small-label">
-                TWO FAMILIES · ONE CELEBRATION
-              </p>
-
               <h2 className="script-heading">
                 The Families
               </h2>
+
+              <p className="small-label">
+                TWO FAMILIES · ONE CELEBRATION
+              </p>
 
               <Ornament />
 
@@ -365,13 +365,13 @@ function App() {
 
               {/* MATCHING SCRIPT HEADING */}
 
-              <h2 className="script-heading">
-                Save the Date
-              </h2>
-
               <Ornament />
 
               {/* DATE CARD */}
+
+              <h2 className="script-heading save-the-date-label">
+                Save the Date
+              </h2>
 
               <div className="date-card">
 
@@ -440,13 +440,13 @@ function App() {
 
             <div className="section-content">
 
-              <p className="small-label">
-                YOUR PRESENCE MEANS THE WORLD TO US
-              </p>
-
               <h2 className="script-heading">
                 Join Our Celebration
               </h2>
+
+              <p className="small-label">
+                YOUR PRESENCE MEANS THE WORLD TO US
+              </p>
 
               <Ornament />
 
