@@ -85,6 +85,29 @@ function App() {
 
   const audioRef = useRef(null);
 
+  /* INTERSECTION OBSERVER — adds is-visible to animate sections in */
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+          }
+        });
+      },
+      {
+        threshold: 0.08,       // trigger when 8% of the section is visible
+        rootMargin: "0px 0px -40px 0px",
+      }
+    );
+
+    const sections = document.querySelectorAll(".page-section");
+    sections.forEach((s) => observer.observe(s));
+
+    return () => observer.disconnect();
+  }, [opened]); // re-run when invitation opens so new sections are observed
+
   /* START BACKGROUND MUSIC */
 
   const startMusic = async () => {

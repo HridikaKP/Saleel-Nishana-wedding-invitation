@@ -856,6 +856,7 @@ button {
 .page-section.is-visible .section-content > *,
 .page-section.is-visible .opening-content > * {
   animation: weddingGlide 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-fill-mode: forwards;
 }
 
 /* Sequential appearance */
@@ -915,6 +916,23 @@ button {
     transform: none;
     animation: none !important;
   }
+}
+
+/* Safety fallback: if is-visible is never added (e.g. observer blocked),
+   reveal content after a short delay so page is never blank */
+@keyframes forceReveal {
+  to { opacity: 1; transform: none; }
+}
+
+.page-section .section-content > *,
+.page-section .opening-content > * {
+  animation: forceReveal 0.5s ease 2.5s forwards;
+}
+
+/* When is-visible IS set, use the nicer glide animation instead */
+.page-section.is-visible .section-content > *,
+.page-section.is-visible .opening-content > * {
+  animation: weddingGlide 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 /* =========================================
