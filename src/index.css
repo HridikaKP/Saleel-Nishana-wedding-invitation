@@ -55,7 +55,8 @@ button {
   justify-content: center;
   width: 100%;
   min-height: 100svh;
-  padding: 55px 24px;
+  /* vertical padding: keeps content inside the plate top/bottom (~18% each side) */
+  padding: 18svh 0;
   text-align: center;
   scroll-snap-align: start;
 }
@@ -64,9 +65,11 @@ button {
 .opening-content {
   position: relative;
   z-index: 2;
-  width: min(100%, 720px);
+  /* horizontal: 18% side-padding to stay inside the oval plate borders */
+  width: 64%;          /* 100% - 2×18% = 64% */
+  max-width: 520px;
   margin: auto;
-  padding: 35px 20px;
+  padding: 12px 0;
 }
 
 /* =========================================
@@ -605,16 +608,18 @@ button {
 
 @media (max-width: 768px) {
   .page-section {
-    padding: 35px 18px;
+    padding: 16svh 0;
   }
 
   .section-content,
   .opening-content {
-    padding: 25px 12px;
+    width: 62%;
+    max-width: 420px;
+    padding: 10px 0;
   }
 
   .monogram {
-    width: clamp(250px, 48vw, 330px);
+    width: clamp(200px, 42vw, 280px);
   }
 }
 
@@ -625,125 +630,198 @@ button {
 @media (max-width: 480px) {
   .page-section {
     min-height: 100svh;
-    padding: 25px 13px;
+    /* On mobile the plate inner area is ~64% wide and spans ~64% of the height */
+    padding: 15svh 0;
   }
 
   .section-content,
   .opening-content {
-    width: 100%;
-    padding: 20px 9px;
+    /* Keep content snugly inside the oval plate on mobile */
+    width: 60%;
+    max-width: 100%;    /* no absolute cap — let the % do the work */
+    padding: 8px 0;
   }
 
   .monogram {
-    width: min(78vw, 310px);
-    margin-bottom: 28px;
+    width: min(54vw, 230px);
+    margin-bottom: 20px;
   }
 
   .open-button {
-    min-width: 205px;
-    min-height: 52px;
-    font-size: 9px;
+    min-width: 165px;
+    min-height: 48px;
+    font-size: 8px;
+    padding: 0 18px;
   }
 
   .small-label {
-    font-size: 10px;
-    letter-spacing: 2px;
-  }
-
-  .script-heading {
-    font-size: 47px;
-  }
-
-  .invitation-message {
-    font-size: 19px;
-    line-height: 1.6;
-  }
-
-  .invitation-couple h2 {
-    font-size: 36px;
-  }
-
-  .person-name {
-    font-size: 36px;
-  }
-
-  .parent-details {
-    font-size: 19px;
-  }
-
-  .family-details {
-    gap: 17px;
-  }
-
-  .date-card {
-    width: 100%;
-    margin: 22px auto;
-    padding: 20px 8px;
-  }
-
-  .date-number {
-    font-size: 108px;
-  }
-
-  .date-side-line {
-    width: 23px;
-  }
-
-  .month-year {
-    font-size: 17px;
-  }
-
-  .wedding-time {
-    font-size: 25px;
-  }
-
-  .countdown-area {
-    margin-top: 25px;
-    padding: 19px 5px;
-  }
-
-  .countdown {
-    gap: 9px;
-  }
-
-  .countdown-item {
-    min-width: 61px;
-    min-height: 70px;
-    padding: 7px 5px;
-  }
-
-  .countdown-number {
-    font-size: 26px;
-  }
-
-  .countdown-label {
-    font-size: 7px;
-  }
-
-  .venue-name {
-    font-size: 27px;
-  }
-
-  .venue-location {
-    font-size: 20px;
-  }
-
-  .venue-date {
     font-size: 9px;
     letter-spacing: 1.5px;
   }
 
+  .script-heading {
+    font-size: 36px;
+  }
+
+  .invitation-message {
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 14px auto;
+  }
+
+  .invitation-couple {
+    margin: 16px auto;
+  }
+
+  .invitation-couple h2 {
+    font-size: 28px;
+  }
+
+  .invitation-couple span {
+    font-size: 28px;
+  }
+
+  .person-name {
+    font-size: 26px;
+  }
+
+  .parent-details {
+    font-size: 15px;
+  }
+
+  .family-details {
+    gap: 12px;
+    margin-top: 18px;
+  }
+
+  .and-symbol {
+    font-size: 32px;
+  }
+
+  .date-card {
+    width: 100%;
+    margin: 14px auto;
+    padding: 14px 4px;
+  }
+
+  .date-number {
+    font-size: 72px;
+  }
+
+  .date-side-line {
+    width: 16px;
+  }
+
+  .month-year {
+    font-size: 13px;
+    letter-spacing: 3px;
+  }
+
+  .year-label {
+    font-size: 9px;
+  }
+
+  .time-display {
+    margin-top: 16px;
+  }
+
+  .wedding-time {
+    font-size: 18px;
+  }
+
+  .countdown-area {
+    margin-top: 16px;
+    padding: 14px 0;
+  }
+
+  .countdown-heading {
+    font-size: 9px;
+    margin-bottom: 14px;
+  }
+
+  .countdown {
+    gap: 6px;
+  }
+
+  .countdown-item {
+    min-width: 48px;
+    min-height: 56px;
+    padding: 5px 4px;
+  }
+
+  .countdown-number {
+    font-size: 20px;
+  }
+
+  .countdown-label {
+    font-size: 6px;
+  }
+
+  .venue-decoration {
+    margin: 10px 0;
+    font-size: 38px;
+  }
+
+  .venue-name {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+
+  .venue-location {
+    font-size: 16px;
+    margin: 8px 0 14px;
+  }
+
+  .venue-date {
+    font-size: 8px;
+    letter-spacing: 1px;
+    gap: 6px;
+  }
+
   .location-button {
-    min-width: 205px;
-    min-height: 49px;
+    min-width: 160px;
+    min-height: 44px;
+    font-size: 9px;
+    padding: 0 16px;
+  }
+
+  .location-note {
+    font-size: 14px;
+    margin-top: 8px;
   }
 
   .closing-message {
-    font-size: 19px;
+    font-size: 15px;
+    margin: 16px auto;
+  }
+
+  .closing-names {
+    margin: 16px 0;
   }
 
   .closing-names h2 {
-    font-size: 36px;
+    font-size: 28px;
+  }
+
+  .closing-names span {
+    font-size: 28px;
+  }
+
+  .closing-date {
+    margin: 14px 0;
+    font-size: 9px;
+  }
+
+  .ornament {
+    margin: 14px auto;
+  }
+
+  .ornament span {
+    width: 28px;
+  }
+
+  .ornament b {
+    font-size: 15px;
   }
 }
 
@@ -1015,28 +1093,33 @@ button {
   font-family: "Noto Naskh Arabic", "Amiri", serif !important;
 }
 
-/* Mobile typography */
+/* Mobile typography — scaled to fit inside the plate */
 
 @media (max-width: 480px) {
   .wedding-site .script-heading {
-    font-size: 47px;
+    font-size: 34px;
   }
 
   .wedding-site .invitation-couple h2,
   .wedding-site .person-name,
   .wedding-site .closing-names h2 {
-    font-size: 36px;
+    font-size: 26px;
   }
 
   .wedding-site .invitation-message,
   .wedding-site .parent-details,
   .wedding-site .closing-message,
   .wedding-site .venue-location {
-    font-size: 21px;
+    font-size: 14px;
     line-height: 1.6;
   }
 
   .wedding-site .venue-name {
-    font-size: 27px;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+  }
+
+  .wedding-site .arabic-text {
+    font-size: 18px;
   }
 }
