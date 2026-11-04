@@ -1,0 +1,1024 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap');
+
+:root {
+  font-family: "Cormorant Garamond", serif;
+  color: #405d6c;
+  background: #edf3f6;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+
+  --blue: #405f70;
+  --blue-dark: #344f5d;
+  --gold: #a58a61;
+  --gold-light: #c5ad85;
+  --sage: #829b8d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.wedding-site {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* =========================================
+   COMMON PAGE STRUCTURE
+========================================= */
+
+.page-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100svh;
+  padding: 55px 24px;
+  text-align: center;
+  scroll-snap-align: start;
+}
+
+.section-content,
+.opening-content {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 720px);
+  margin: auto;
+  padding: 35px 20px;
+}
+
+/* =========================================
+   OPENING PAGE
+========================================= */
+
+.opening-page {
+  min-height: 100svh;
+  background-color: #dce8ed;
+  background-image: url("/Icy%20Blue%20Agate%20Wedding%20Frame.png");
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.opening-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.monogram {
+  display: block;
+  width: clamp(240px, 36vw, 360px);
+  max-width: 82vw;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto 35px;
+  mix-blend-mode: multiply;
+}
+
+.open-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  min-width: 210px;
+  min-height: 54px;
+  padding: 0 32px;
+  border: 1px solid #92754e;
+  border-radius: 2px;
+  background: rgba(154, 127, 86, 0.92);
+  color: #fffdf8;
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  box-shadow: 0 5px 18px rgba(81, 99, 106, 0.18);
+  transition: all 0.3s ease;
+}
+
+.open-button:hover {
+  background: #786341;
+  border-color: #786341;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(81, 99, 106, 0.23);
+}
+
+.open-button span {
+  font-size: 17px;
+}
+
+/* =========================================
+   ICY BLUE AGATE BACKGROUND
+   ALL PAGES
+========================================= */
+
+.page-section:not(.opening-page) {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: #dce8ed;
+  background-image: url("/Icy%20Blue%20Agate%20Wedding%20Frame.png");
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* =========================================
+   ORNAMENT
+========================================= */
+
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  margin: 23px auto;
+  color: var(--gold);
+}
+
+.ornament span {
+  display: block;
+  width: 43px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold-light));
+}
+
+.ornament span:last-child {
+  transform: rotate(180deg);
+}
+
+.ornament b {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+/* =========================================
+   COMMON TYPOGRAPHY
+========================================= */
+
+.small-label {
+  margin: 0 0 15px;
+  color: #617b88;
+  font-family: "Cinzel", serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  line-height: 1.8;
+}
+
+.arabic-text {
+  margin: 0 0 16px;
+  color: #526e7b;
+  font-size: 27px;
+}
+
+.script-heading {
+  margin: 0;
+  color: #405f70;
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(48px, 6vw, 68px);
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.invitation-message {
+  max-width: 480px;
+  margin: 23px auto;
+  color: #405967;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(20px, 2.6vw, 24px);
+  line-height: 1.7;
+  font-weight: 500;
+}
+
+.closing-text {
+  margin-top: 27px;
+}
+
+/* =========================================
+   COUPLE NAMES
+========================================= */
+
+.invitation-couple {
+  margin: 30px auto;
+}
+
+.invitation-couple h2 {
+  margin: 10px 0;
+  color: #8d744e;
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(38px, 5vw, 52px);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.invitation-couple span {
+  display: block;
+  color: var(--gold);
+  font-family: "Great Vibes", cursive;
+  font-size: 40px;
+}
+
+/* =========================================
+   FAMILY PAGE
+========================================= */
+
+.family-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  margin-top: 32px;
+}
+
+.family-block {
+  width: 100%;
+}
+
+.family-role {
+  margin: 0 0 13px;
+  color: #987d55;
+  font-family: "Cinzel", serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.person-name {
+  margin: 0;
+  color: #405d6c;
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(32px, 4vw, 44px);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.family-line {
+  width: 48px;
+  height: 1px;
+  margin: 15px auto;
+  background: #b49b76;
+}
+
+.parent-details {
+  margin: 0;
+  color: #405967;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 22px;
+  line-height: 1.55;
+  font-weight: 500;
+}
+
+.and-symbol {
+  color: #a58a61;
+  font-family: "Great Vibes", cursive;
+  font-size: 45px;
+}
+
+/* =========================================
+   DATE PAGE
+========================================= */
+
+.date-page .section-content {
+  max-width: 520px;
+}
+
+.date-card {
+  position: relative;
+  width: min(100%, 390px);
+  margin: 25px auto;
+  padding: 22px 15px 25px;
+  border-top: 1px solid rgba(165, 138, 97, 0.6);
+  border-bottom: 1px solid rgba(165, 138, 97, 0.6);
+}
+
+.weekday {
+  margin: 0 0 12px;
+  color: #647e89;
+  font-family: "Cinzel", serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+
+.date-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.date-number {
+  margin: 0;
+  color: #987b52;
+  font-family: "Cinzel", serif;
+  font-size: clamp(100px, 15vw, 140px);
+  font-weight: 400;
+  line-height: 1;
+  text-shadow: 0 2px 1px rgba(255, 255, 255, 0.65);
+}
+
+.date-side-line {
+  width: 38px;
+  height: 1px;
+  background: #b49b76;
+}
+
+.month-year {
+  margin: 12px 0 5px;
+  color: #526e7b;
+  font-family: "Cinzel", serif;
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: 5px;
+}
+
+.year-label {
+  margin: 0;
+  color: #82949b;
+  font-family: "Cinzel", serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+/* =========================================
+   TIME
+========================================= */
+
+.time-display {
+  margin: 25px auto 0;
+}
+
+.time-label {
+  margin: 0 0 10px;
+  color: #647e89;
+  font-family: "Cinzel", serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.wedding-time {
+  margin: 0;
+  color: #405d6c;
+  font-family: "Cinzel", serif;
+  font-size: clamp(25px, 4vw, 34px);
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.wedding-time span {
+  color: #a58a61;
+}
+
+/* =========================================
+   COUNTDOWN
+========================================= */
+
+.countdown-area {
+  width: min(100%, 480px);
+  margin: 35px auto 0;
+  padding: 22px 12px;
+  border-top: 1px solid rgba(165, 138, 97, 0.35);
+}
+
+.countdown-heading {
+  margin: 0 0 23px;
+  color: #647e89;
+  font-family: "Cinzel", serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(12px, 3vw, 25px);
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 68px;
+  min-height: 78px;
+  padding: 9px 8px;
+  border: 1px solid rgba(165, 138, 97, 0.4);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.countdown-number {
+  color: #92764f;
+  font-family: "Cinzel", serif;
+  font-size: clamp(27px, 4vw, 36px);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown-label {
+  margin-top: 5px;
+  color: #526e7b;
+  font-family: "Montserrat", sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* =========================================
+   VENUE PAGE
+========================================= */
+
+.venue-page .section-content {
+  max-width: 620px;
+}
+
+.venue-decoration {
+  margin: 18px 0;
+  color: #a58a61;
+  font-size: 55px;
+  line-height: 1;
+}
+
+.venue-overline {
+  margin: 0 0 15px;
+  color: #647e89;
+  font-family: "Cinzel", serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+}
+
+.venue-name {
+  max-width: 520px;
+  margin: 0 auto;
+  color: #405d6c;
+  font-family: "Cinzel", serif;
+  font-size: clamp(26px, 4.5vw, 39px);
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  line-height: 1.45;
+}
+
+.venue-location {
+  margin: 12px 0 20px;
+  color: #526e7b;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.venue-date {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin: 24px auto;
+  color: #647e89;
+  font-family: "Cinzel", serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.location-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-width: 220px;
+  min-height: 52px;
+  padding: 0 24px;
+  border: 1px solid #92764f;
+  border-radius: 2px;
+  background: #92764f;
+  color: #fffdf8;
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-decoration: none;
+  box-shadow: 0 5px 16px rgba(81, 99, 106, 0.15);
+  transition: all 0.3s ease;
+}
+
+.location-button:hover {
+  background: #786341;
+  transform: translateY(-2px);
+}
+
+.map-symbol {
+  font-size: 18px;
+}
+
+.location-note {
+  margin: 13px 0 0;
+  color: #718994;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  font-style: italic;
+}
+
+/* =========================================
+   CLOSING PAGE
+========================================= */
+
+.closing-message {
+  max-width: 430px;
+  margin: 25px auto;
+  color: #405967;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 22px;
+  line-height: 1.7;
+  font-weight: 500;
+}
+
+.closing-names {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin: 28px 0;
+}
+
+.closing-names h2 {
+  margin: 0;
+  color: #92764f;
+  font-family: "Great Vibes", cursive;
+  font-size: 45px;
+  font-weight: 400;
+}
+
+.closing-names span {
+  color: #a58a61;
+  font-family: "Great Vibes", cursive;
+  font-size: 40px;
+}
+
+.closing-date {
+  margin: 25px 0;
+  color: #647e89;
+  font-family: "Cinzel", serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+.back-button {
+  margin-top: 10px;
+  padding: 13px 22px;
+  border: 1px solid rgba(165, 138, 97, 0.5);
+  background: rgba(255, 255, 255, 0.2);
+  color: #806844;
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+/* =========================================
+   TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 768px) {
+  .page-section {
+    padding: 35px 18px;
+  }
+
+  .section-content,
+  .opening-content {
+    padding: 25px 12px;
+  }
+
+  .monogram {
+    width: clamp(250px, 48vw, 330px);
+  }
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 480px) {
+  .page-section {
+    min-height: 100svh;
+    padding: 25px 13px;
+  }
+
+  .section-content,
+  .opening-content {
+    width: 100%;
+    padding: 20px 9px;
+  }
+
+  .monogram {
+    width: min(78vw, 310px);
+    margin-bottom: 28px;
+  }
+
+  .open-button {
+    min-width: 205px;
+    min-height: 52px;
+    font-size: 9px;
+  }
+
+  .small-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .script-heading {
+    font-size: 47px;
+  }
+
+  .invitation-message {
+    font-size: 19px;
+    line-height: 1.6;
+  }
+
+  .invitation-couple h2 {
+    font-size: 36px;
+  }
+
+  .person-name {
+    font-size: 36px;
+  }
+
+  .parent-details {
+    font-size: 19px;
+  }
+
+  .family-details {
+    gap: 17px;
+  }
+
+  .date-card {
+    width: 100%;
+    margin: 22px auto;
+    padding: 20px 8px;
+  }
+
+  .date-number {
+    font-size: 108px;
+  }
+
+  .date-side-line {
+    width: 23px;
+  }
+
+  .month-year {
+    font-size: 17px;
+  }
+
+  .wedding-time {
+    font-size: 25px;
+  }
+
+  .countdown-area {
+    margin-top: 25px;
+    padding: 19px 5px;
+  }
+
+  .countdown {
+    gap: 9px;
+  }
+
+  .countdown-item {
+    min-width: 61px;
+    min-height: 70px;
+    padding: 7px 5px;
+  }
+
+  .countdown-number {
+    font-size: 26px;
+  }
+
+  .countdown-label {
+    font-size: 7px;
+  }
+
+  .venue-name {
+    font-size: 27px;
+  }
+
+  .venue-location {
+    font-size: 20px;
+  }
+
+  .venue-date {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+
+  .location-button {
+    min-width: 205px;
+    min-height: 49px;
+  }
+
+  .closing-message {
+    font-size: 19px;
+  }
+
+  .closing-names h2 {
+    font-size: 36px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================
+   FLOATING WEDDING MUSIC CONTROL
+========================================= */
+
+.music-control {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  min-width: 125px;
+  padding: 12px 17px;
+
+  border: 1px solid #a58a61;
+  border-radius: 30px;
+
+  background: rgba(237, 243, 246, 0.94);
+  color: #405f70;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.3px;
+
+  box-shadow: 0 4px 18px rgba(52, 79, 93, 0.18);
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+
+  transition: all 0.3s ease;
+}
+
+.music-control:hover {
+  background: #405f70;
+  color: #fffdf8;
+  transform: translateY(-3px);
+}
+
+.music-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.music-control.playing .music-icon {
+  animation: musicPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes musicPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@media (max-width: 480px) {
+  .music-control {
+    right: 14px;
+    bottom: 15px;
+    min-width: 112px;
+    padding: 11px 14px;
+    font-size: 8px;
+  }
+}
+
+/* ==========================================
+   WEDDING GLIDING ANIMATIONS
+========================================== */
+
+.page-section .section-content > *,
+.page-section .opening-content > * {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes weddingGlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-section.is-visible .section-content > *,
+.page-section.is-visible .opening-content > * {
+  animation: weddingGlide 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Sequential appearance */
+
+.page-section.is-visible .section-content > *:nth-child(1) {
+  animation-delay: 0.10s;
+}
+
+.page-section.is-visible .section-content > *:nth-child(2) {
+  animation-delay: 0.22s;
+}
+
+.page-section.is-visible .section-content > *:nth-child(3) {
+  animation-delay: 0.34s;
+}
+
+.page-section.is-visible .section-content > *:nth-child(4) {
+  animation-delay: 0.46s;
+}
+
+.page-section.is-visible .section-content > *:nth-child(5) {
+  animation-delay: 0.58s;
+}
+
+.page-section.is-visible .section-content > *:nth-child(6) {
+  animation-delay: 0.70s;
+}
+
+.page-section.is-visible .section-content > *:nth-child(7) {
+  animation-delay: 0.82s;
+}
+
+.page-section.is-visible .section-content > *:nth-child(8) {
+  animation-delay: 0.94s;
+}
+
+.page-section.is-visible .section-content > *:nth-child(9) {
+  animation-delay: 1.06s;
+}
+
+/* Opening cover */
+
+.page-section.is-visible .opening-content > *:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.page-section.is-visible .opening-content > *:nth-child(2) {
+  animation-delay: 0.65s;
+}
+
+/* Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .page-section .section-content > *,
+  .page-section .opening-content > * {
+    opacity: 1;
+    transform: none;
+    animation: none !important;
+  }
+}
+
+/* =========================================
+   SALEEL & NISHANA — COMPLETE TYPOGRAPHY
+   Inspired by the supplied invitation image
+========================================= */
+
+/* Calligraphy: decorative headings and names */
+
+.wedding-site .script-heading,
+.wedding-site .invitation-couple h2,
+.wedding-site .person-name,
+.wedding-site .closing-names h2 {
+  font-family: "Great Vibes", cursive !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+}
+
+/* Classic serif: labels and section subheadings */
+
+.wedding-site .small-label,
+.wedding-site .family-role,
+.wedding-site .venue-overline,
+.wedding-site .time-label,
+.wedding-site .countdown-heading,
+.wedding-site .weekday,
+.wedding-site .month-year,
+.wedding-site .year-label,
+.wedding-site .venue-date,
+.wedding-site .closing-date {
+  font-family: "Cinzel", serif !important;
+  font-weight: 500 !important;
+}
+
+/* Elegant readable serif: invitation paragraphs */
+
+.wedding-site .invitation-message,
+.wedding-site .parent-details,
+.wedding-site .closing-message,
+.wedding-site .venue-location,
+.wedding-site .location-note {
+  font-family: "Cormorant Garamond", serif !important;
+  font-weight: 500 !important;
+}
+
+/* Venue title */
+
+.wedding-site .venue-name {
+  font-family: "Cinzel", serif !important;
+  font-weight: 600 !important;
+  letter-spacing: 1.5px;
+}
+
+/* Date and countdown numerals */
+
+.wedding-site .date-number,
+.wedding-site .countdown-number,
+.wedding-site .wedding-time {
+  font-family: "Cinzel", serif !important;
+}
+
+/* Countdown labels */
+
+.wedding-site .countdown-label {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+/* Buttons and music controls */
+
+.wedding-site .open-button,
+.wedding-site .location-button,
+.wedding-site .back-button,
+.wedding-site .music-control {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+/* Arabic text */
+
+.wedding-site .arabic-text {
+  font-family: "Noto Naskh Arabic", "Amiri", serif !important;
+}
+
+/* Mobile typography */
+
+@media (max-width: 480px) {
+  .wedding-site .script-heading {
+    font-size: 47px;
+  }
+
+  .wedding-site .invitation-couple h2,
+  .wedding-site .person-name,
+  .wedding-site .closing-names h2 {
+    font-size: 36px;
+  }
+
+  .wedding-site .invitation-message,
+  .wedding-site .parent-details,
+  .wedding-site .closing-message,
+  .wedding-site .venue-location {
+    font-size: 21px;
+    line-height: 1.6;
+  }
+
+  .wedding-site .venue-name {
+    font-size: 27px;
+  }
+}
