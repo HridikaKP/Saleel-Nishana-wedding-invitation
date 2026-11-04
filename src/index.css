@@ -1,4 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Sacramento&family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
+
+@font-face {
+  font-family: "Rustic Roadway";
+  src: url("/fonts/RusticRoadway.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   font-family: "Cormorant Garamond", serif;
@@ -201,7 +209,7 @@ button {
 .script-heading {
   margin: 0;
   color: #405f70;
-  font-family: "Sacramento", cursive;
+  font-family: "Rustic Roadway", cursive;
   font-size: clamp(62px, 8vw, 90px);
   font-weight: 400;
   line-height: 1.3;
@@ -237,7 +245,7 @@ button {
 .invitation-couple h2 {
   margin: 10px 0;
   color: #8d744e;
-  font-family: "Sacramento", cursive;
+  font-family: "Rustic Roadway", cursive;
   font-size: clamp(50px, 7vw, 70px);
   font-weight: 400;
   letter-spacing: 0;
@@ -246,7 +254,7 @@ button {
 .invitation-couple span {
   display: block;
   color: var(--gold);
-  font-family: "Sacramento", cursive;
+  font-family: "Rustic Roadway", cursive;
   font-size: 38px;
 }
 
@@ -278,7 +286,7 @@ button {
 .person-name {
   margin: 0;
   color: #405d6c;
-  font-family: "Sacramento", cursive;
+  font-family: "Rustic Roadway", cursive;
   font-size: clamp(42px, 5.5vw, 58px);
   font-weight: 400;
   letter-spacing: 0;
@@ -302,7 +310,7 @@ button {
 
 .and-symbol {
   color: #a58a61;
-  font-family: "Sacramento", cursive;
+  font-family: "Rustic Roadway", cursive;
   font-size: 60px;
 }
 
@@ -576,14 +584,14 @@ button {
 .closing-names h2 {
   margin: 0;
   color: #92764f;
-  font-family: "Sacramento", cursive;
+  font-family: "Rustic Roadway", cursive;
   font-size: clamp(44px, 6.5vw, 60px);
   font-weight: 400;
 }
 
 .closing-names span {
   color: #a58a61;
-  font-family: "Sacramento", cursive;
+  font-family: "Rustic Roadway", cursive;
   font-size: 38px;
 }
 
