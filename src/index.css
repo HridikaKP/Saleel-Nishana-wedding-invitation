@@ -631,13 +631,14 @@ button {
   .page-section {
     min-height: 100svh;
     /* On mobile the plate inner area is ~64% wide and spans ~64% of the height */
-    padding: 15svh 0;
+    /* Top plate border starts ~22% down, bottom ~88% — so pad 22% top, 14% bottom */
+    padding: 22svh 0 14svh;
   }
 
   .section-content,
   .opening-content {
     /* Keep content snugly inside the oval plate on mobile */
-    width: 60%;
+    width: 56%;
     max-width: 100%;    /* no absolute cap — let the % do the work */
     padding: 8px 0;
   }
