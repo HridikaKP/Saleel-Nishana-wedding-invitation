@@ -577,14 +577,14 @@ button {
   margin: 0;
   color: #92764f;
   font-family: "Great Vibes", cursive;
-  font-size: 45px;
+  font-size: clamp(32px, 5vw, 42px);
   font-weight: 400;
 }
 
 .closing-names span {
   color: #a58a61;
   font-family: "Great Vibes", cursive;
-  font-size: 40px;
+  font-size: 36px;
 }
 
 .closing-date {

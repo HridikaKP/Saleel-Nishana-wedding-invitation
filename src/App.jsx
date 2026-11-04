@@ -532,13 +532,13 @@ function App() {
               <div className="closing-names">
 
                 <h2>
-                  Saleel
+                  Adv. Saleel Nelliyali
                 </h2>
 
                 <span>&</span>
 
                 <h2>
-                  Nishana
+                  Nishana Sherin
                 </h2>
 
               </div>
