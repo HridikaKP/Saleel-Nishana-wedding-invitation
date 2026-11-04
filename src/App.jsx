@@ -80,8 +80,34 @@ function Ornament() {
 /* SCROLL HINT */
 
 function ScrollHint() {
+  const hintRef = useRef(null);
+
+  const handleClick = () => {
+    // Find the parent page-section
+    const currentSection = hintRef.current?.closest(".page-section");
+    if (!currentSection) return;
+
+    // Find the next sibling page-section
+    let next = currentSection.nextElementSibling;
+    while (next && !next.classList.contains("page-section")) {
+      next = next.nextElementSibling;
+    }
+
+    if (next) {
+      next.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
-    <div className="scroll-hint" aria-hidden="true">
+    <div
+      className="scroll-hint"
+      aria-label="Scroll to next section"
+      role="button"
+      tabIndex={0}
+      ref={hintRef}
+      onClick={handleClick}
+      onKeyDown={(e) => e.key === "Enter" && handleClick()}
+    >
       <span className="scroll-hint-label">scroll</span>
       <div className="scroll-hint-arrow">
         <svg width="18" height="24" viewBox="0 0 18 24" fill="none">
@@ -92,6 +118,7 @@ function ScrollHint() {
     </div>
   );
 }
+
 
 /* MAIN APP */
 

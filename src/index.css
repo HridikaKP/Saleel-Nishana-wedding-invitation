@@ -643,9 +643,22 @@ button {
   gap: 5px;
   color: #a58a61;
   z-index: 10;
-  pointer-events: none;
+  pointer-events: all;
+  cursor: pointer;
   animation: scrollBounce 1.8s ease-in-out infinite;
+  transition: color 0.2s ease, transform 0.15s ease;
 }
+
+.scroll-hint:hover,
+.scroll-hint:focus {
+  color: #7a6035;
+  outline: none;
+}
+
+.scroll-hint:active {
+  transform: translateX(-50%) scale(0.9);
+}
+
 
 .scroll-hint-label {
   font-family: "Montserrat", sans-serif;
