@@ -239,8 +239,6 @@ function App() {
 
           </div>
 
-          <ScrollHint />
-
         </section>
 
       ) : (
@@ -298,6 +296,8 @@ function App() {
               </p>
 
             </div>
+
+          <ScrollHint />
 
           </section>
 
