@@ -144,7 +144,7 @@ button {
   overflow: hidden;
   background-color: #dce8ed;
   background-image: url("/Icy%20Blue%20Agate%20Wedding%20Frame.png");
-  background-size: auto 100%;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -629,17 +629,25 @@ button {
 
 @media (max-width: 480px) {
   .page-section {
+    /* Let section grow with content; still at least full screen */
     min-height: 100svh;
-    /* On mobile the plate inner area is ~64% wide and spans ~64% of the height */
-    /* Top plate border starts ~22% down, bottom ~88% — so pad 22% top, 14% bottom */
+    height: auto;
+    /* Plate inner area: top border ~22%, bottom ~86%
+       So pad 22% top + 14% bottom to keep text inside */
     padding: 22svh 0 14svh;
+  }
+
+  /* For content-heavy pages, allow more room */
+  .couple-page,
+  .date-page {
+    padding: 18svh 0 10svh;
   }
 
   .section-content,
   .opening-content {
-    /* Keep content snugly inside the oval plate on mobile */
+    /* 56% width keeps content inside the oval plate's side borders */
     width: 56%;
-    max-width: 100%;    /* no absolute cap — let the % do the work */
+    max-width: 100%;
     padding: 8px 0;
   }
 
