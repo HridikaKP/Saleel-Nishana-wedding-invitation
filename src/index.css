@@ -640,19 +640,20 @@ button {
     height: 100svh;
     min-height: 100svh;
     overflow: hidden;
-    /* Top-align children so padding-top pushes
-       content below the plate's gold top border */
-    align-items: flex-start;
+    /* Center content vertically within the plate area.
+       Plate top gold border ≈ 21svh, bottom ≈ 84svh.
+       Padding mirrors those borders → flex centers
+       content inside the 63svh plate zone. */
+    align-items: center;
     justify-content: center;
-    /* 21svh clears the top gold border */
     padding-top: 21svh;
-    padding-bottom: 0;
+    padding-bottom: 16svh;   /* 100svh − 84svh */
   }
 
-  /* Cover page: keep content centered inside plate */
+  /* Cover page: slightly less top pad so monogram is cozy */
   .opening-page {
-    align-items: center;
     padding-top: 19svh;
+    padding-bottom: 14svh;
   }
 
   /* ── Content box: fits within the plate ── */
